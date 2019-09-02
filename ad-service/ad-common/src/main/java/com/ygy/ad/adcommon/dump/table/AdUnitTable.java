@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 public class AdUnitTable {
 
     private Long unitId;
@@ -18,6 +17,8 @@ public class AdUnitTable {
         this.positionType = positionType;
         this.planId = planId;
     }
+
+    public AdUnitTable(){}
 
     public Long getUnitId() {
         return unitId;

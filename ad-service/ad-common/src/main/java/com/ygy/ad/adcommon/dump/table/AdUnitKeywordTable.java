@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 public class AdUnitKeywordTable {
 
     private Long unitId;
@@ -14,6 +13,8 @@ public class AdUnitKeywordTable {
         this.unitId = unitId;
         this.keyword = keyword;
     }
+
+    public AdUnitKeywordTable(){}
 
     public Long getUnitId() {
         return unitId;

@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 public class AdCreativeTable {
 
     private Long adId;
@@ -13,17 +12,21 @@ public class AdCreativeTable {
     private Integer materialType;
     private Integer height;
     private Integer width;
+    private Integer auditStatus;
     private String adUrl;
 
-    public AdCreativeTable(Long adId, String name, Integer type, Integer materialType, Integer height, Integer width, String adUrl) {
+    public AdCreativeTable(Long adId, String name, Integer type, Integer materialType, Integer height, Integer width, Integer auditStatus, String adUrl) {
         this.adId = adId;
         this.name = name;
         this.type = type;
         this.materialType = materialType;
         this.height = height;
         this.width = width;
+        this.auditStatus = auditStatus;
         this.adUrl = adUrl;
     }
+
+    public AdCreativeTable(){}
 
     public Long getAdId() {
         return adId;
@@ -79,5 +82,13 @@ public class AdCreativeTable {
 
     public void setAdUrl(String adUrl) {
         this.adUrl = adUrl;
+    }
+
+    public Integer getAuditStatus() {
+        return auditStatus;
+    }
+
+    public void setAuditStatus(Integer auditStatus) {
+        this.auditStatus = auditStatus;
     }
 }

@@ -15,6 +15,8 @@ public class AdUnitItTable {
         this.itTag = itTag;
     }
 
+    public AdUnitItTable(){}
+
     public Long getUnitId() {
         return unitId;
     }

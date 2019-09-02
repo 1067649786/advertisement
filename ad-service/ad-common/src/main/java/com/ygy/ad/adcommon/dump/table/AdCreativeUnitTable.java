@@ -2,9 +2,9 @@ package com.ygy.ad.adcommon.dump.table;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.omg.CORBA.PUBLIC_MEMBER;
 
 @Data
-@NoArgsConstructor
 public class AdCreativeUnitTable {
 
     private Long adId;
@@ -14,6 +14,8 @@ public class AdCreativeUnitTable {
         this.adId = adId;
         this.unitId = unitId;
     }
+
+    public AdCreativeUnitTable(){}
 
     public Long getAdId() {
         return adId;

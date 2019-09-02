@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 public class AdUnitDistrictTable {
 
     private Long unitId;
@@ -16,6 +15,8 @@ public class AdUnitDistrictTable {
         this.province = province;
         this.city = city;
     }
+
+    public AdUnitDistrictTable(){}
 
     public Long getUnitId() {
         return unitId;

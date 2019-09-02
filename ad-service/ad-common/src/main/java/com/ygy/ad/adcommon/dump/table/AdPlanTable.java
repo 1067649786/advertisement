@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 @Data
-@NoArgsConstructor
 public class AdPlanTable {
 
     private Long id;
@@ -22,6 +21,8 @@ public class AdPlanTable {
         this.startDate = startDate;
         this.endDate = endDate;
     }
+
+    public AdPlanTable(){}
 
     public Long getId() {
         return id;
