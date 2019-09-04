@@ -2,14 +2,14 @@ package com.ygy.ad.adsearch.index.creativeunit;
 
 import com.ygy.ad.adsearch.index.IndexAware;
 import com.ygy.ad.adsearch.index.adunit.AdUnitIndex;
+import com.ygy.ad.adsearch.index.adunit.AdUnitObject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListSet;
 
@@ -84,5 +84,23 @@ public class CreativeUnitIndex implements IndexAware<String,CreativeUnitObject> 
         }
 
         logger.info("after delete: {}", objectMap);
+    }
+
+    public List<Long> selectAds(List<AdUnitObject> unitObjects){
+
+        if(CollectionUtils.isNotEmpty(unitObjects)){
+            return Collections.emptyList();
+        }
+
+        List<Long> result=new ArrayList<>();
+
+        for (AdUnitObject unitObject:unitObjects){
+
+            Set<Long> adIds=unitCreativeMap.get(unitObject.getUnitId());
+            if(CollectionUtils.isNotEmpty(adIds)){
+                result.addAll(adIds);
+            }
+        }
+        return result;
     }
 }

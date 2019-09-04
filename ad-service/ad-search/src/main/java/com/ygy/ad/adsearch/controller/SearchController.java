@@ -6,6 +6,9 @@ import com.ygy.ad.adcommon.vo.CommonResponse;
 import com.ygy.ad.adsearch.client.SponsorClient;
 import com.ygy.ad.adsearch.client.vo.AdPlan;
 import com.ygy.ad.adsearch.client.vo.AdPlanGetRequest;
+import com.ygy.ad.adsearch.search.ISearch;
+import com.ygy.ad.adsearch.search.vo.SearchReponse;
+import com.ygy.ad.adsearch.search.vo.SearchRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +24,8 @@ import java.util.List;
 @RestController
 public class SearchController {
 
+    private final ISearch search;
+
     private final RestTemplate restTemplate;
 
     private final SponsorClient sponsorClient;
@@ -28,9 +33,17 @@ public class SearchController {
     private Logger logger= LoggerFactory.getLogger(SearchController.class);
 
     @Autowired
-    public SearchController(RestTemplate restTemplate, SponsorClient sponsorClient) {
+    public SearchController(RestTemplate restTemplate, SponsorClient sponsorClient, ISearch search) {
         this.restTemplate = restTemplate;
         this.sponsorClient = sponsorClient;
+        this.search = search;
+    }
+
+    @PostMapping("/fetchAds")
+    public SearchReponse fetchAds(@RequestBody SearchRequest request){
+
+        logger.info("ad-search:fetchAds->{}",JSON.toJSONString(request));
+        return search.fetchAds(request);
     }
 
     @IgnoreResponse

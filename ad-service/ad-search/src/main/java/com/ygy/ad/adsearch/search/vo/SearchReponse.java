@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Map;
 
 @Data
-@NoArgsConstructor
 public class SearchReponse {
 
     public Map<String,List<Creative>> adSlot2Ads=new HashMap<>();
