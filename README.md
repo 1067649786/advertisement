@@ -20,10 +20,10 @@
 
 ![](http://47.103.196.106:8080/upload/20190904_06561610.png)
 
-ad-eureka：服务注册与服务发现
-ad-gateway：网关，所有的请求和响应都会通过
-ad-service：广告实现服务
-ad-common：通用代码定义、配置定义，统一异常处理，统一的响应处理
-ad-dashboard：熔断监控部分
-ad-search：广告检索
-ad-sponsor：广告投放
+ad-eureka：服务注册与服务发现<br>
+ad-gateway：网关，所有的请求和响应都会通过<br>
+ad-service：广告实现服务<br>
+ad-common：通用代码定义、配置定义，统一异常处理，统一的响应处理<br>
+ad-dashboard：熔断监控部分<br>
+ad-search：广告检索<br>
+ad-sponsor：广告投放<br>
